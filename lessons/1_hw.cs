@@ -4,6 +4,10 @@ using System.Threading;
 
 namespace lessons
 {
+    /// <summary>
+    /// 5. Написать консольное приложение, которое выводит на экран символы в разных потоках. 
+    /// Использовать Thread. (по аналогии с примером из лекции)
+    /// </summary>
     class Program
     {
         public static void ThreadProc()
@@ -20,7 +24,7 @@ namespace lessons
             Console.WriteLine("Main thread.");
             Thread thread = new Thread(new ThreadStart(ThreadProc));
             thread.Start();
-            
+
             for (int i = 0; i < 14; i++)
             {
                 Console.WriteLine("Main thread: {0}", i);
@@ -33,4 +37,14 @@ namespace lessons
             Console.ReadLine();
         }
     }
+
+
+
+
+    /// <summary>
+    /// 6. Написать консольное приложение, в котором реализована обертка над пулом потоков – 
+    /// ThreadPoolWorker (два варианта, без результата выполнения операции и с результатом 
+    /// выполнения асинхронной операции).
+    /// </summary>
+
 }
